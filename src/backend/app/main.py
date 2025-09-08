@@ -4,6 +4,12 @@ from pydantic import BaseModel, EmailStr, Field
 import os, smtplib, ssl
 from email.message import EmailMessage
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 app = FastAPI(title="Resume API", version="1.0.0")
 
 ALLOWED_ORIGINS = [os.getenv("FRONTEND_URL", "http://localhost:3000")]
@@ -56,6 +62,9 @@ async def contact(msg: ContactMessage):
     TO_EMAIL  = os.getenv("TO_EMAIL", "steventuanpham@gmail.com")
 
     if not all([SMTP_HOST, SMTP_USER, SMTP_PASS, TO_EMAIL]):
+        print("⚠️ Email not configured. Message received:")
+        print(f"From: {msg.name} <{msg.email}>")
+        print(msg.message)
         raise HTTPException(status_code=500, detail="Email not configured")
 
     email = EmailMessage()
