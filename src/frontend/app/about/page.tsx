@@ -4,7 +4,7 @@ export const metadata = { title: 'About — Steven Pham' };
 
 export default function About() {
   return (
-    <Section title="About Me">
+    <Section title="About Me" customClass="AboutMe">
       <p>
         I'm a software engineer based in Boston, MA 
         with experience across multiple different frameworks.
