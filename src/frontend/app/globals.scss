@@ -1,0 +1,63 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: $bg;
+  color: $text;
+}
+
+a {
+  color: #fff;
+}
+
+.container {
+  background: #437fc7;
+  padding: 1rem 2rem;
+  max-width: 1420px;
+  margin: 2rem;
+  border-radius: 10px;
+}
+
+.footer {
+  border: none;
+  padding: 2rem;
+  margin: 0;
+  border-radius: 0;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+
+  .btn {
+    padding: 1rem;
+    background-color: #6daffe;
+    margin: 1rem 0;
+    width: 10rem;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+}
+
+.card {
+  background-color: #6daffe;
+  padding: 1rem 2rem 2rem;
+  border-radius: 10px;
+  margin: 1rem;
+
+  h4 {
+    margin: 1rem 0;
+  }
+
+  .projectUrls {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin: .5rem 0;
+      font-weight: bold;
+    }
+  }
+}
