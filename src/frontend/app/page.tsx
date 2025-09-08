@@ -14,7 +14,7 @@ export default function Home() {
         </div>
       </header>
 
-      <Section title="What I Do">
+      <Section title="What I Do" customClass="WhatIDo">
         <p>I build reliable, fast web apps with Next.js, Node/Python APIs, and modern CI/CD.</p>
       </Section>
 
