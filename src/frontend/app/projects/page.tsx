@@ -2,7 +2,7 @@ import ProjectCard, { Project } from '../../components/ProjectCard';
 import { API_BASE_URL } from '../../lib/config';
 
 export const revalidate = 0;
-export const metadata = { title: 'Projects — Your Name' };
+export const metadata = { title: 'Projects — Steven Pham' };
 
 async function getProjects(): Promise<Project[]> {
   const res = await fetch(`${API_BASE_URL}/projects`, { cache: 'no-store' });

@@ -32,7 +32,7 @@ export default function ContactPage() {
     <section className="section" style={{ maxWidth: 760, margin: '0 auto' }}>
       <h2>Contact</h2>
       <form onSubmit={onSubmit} className="contactCard" style={{ display: 'grid', gap: '.75rem' }}>
-        <input name="name" placeholder="Your name" required />
+        <input name="name" placeholder="Steven Pham" required />
         <input type="email" name="email" placeholder="you@example.com" required />
         <textarea name="message" placeholder="How can I help?" rows={6} required />
         <button className="btn primary" type="submit" disabled={status==='sending'}>

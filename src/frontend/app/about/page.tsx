@@ -1,6 +1,6 @@
 import Section from '../../components/Section';
 
-export const metadata = { title: 'About — Your Name' };
+export const metadata = { title: 'About — Steven Pham' };
 
 export default function About() {
   return (
