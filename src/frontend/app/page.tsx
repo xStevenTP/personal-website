@@ -17,6 +17,11 @@ export default function Home() {
       <Section title="What I Do">
         <p>I build reliable, fast web apps with Next.js, Node/Python APIs, and modern CI/CD.</p>
       </Section>
+
+      <Section title="Links">
+        <a href="https://github.com/xStevenTP" target="_blank">Github</a>
+        <a href="https://www.linkedin.com/in/steven-pham-697585168/" target="_blank">Linkedin</a>
+      </Section>
     </>
   );
 }
