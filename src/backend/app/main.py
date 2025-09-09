@@ -26,32 +26,10 @@ class ContactMessage(BaseModel):
     email: EmailStr
     message: str = Field(min_length=1, max_length=5000)
 
-class Project(BaseModel):
-    id: str
-    name: str
-    description: str
-    tags: list[str]
-    repoUrl: str | None = None
-    liveUrl: str | None = None
-
-PROJECTS = [
-    Project(
-        id="crypto-tracker",
-        name="Crypto Tracker",
-        description="Crypto Coin tracker website with AI suggestion.",
-        tags=["Next.js", "TypeScript", "Tailwind", "Python", "Django", "Flask"],
-        liveUrl="https://crypto-tracker.vercel.app",
-        repoUrl="https://github.com/xStevenTP/CryptoTracker",
-    ),
-]
 
 @app.get("/health")
 async def health():
     return {"ok": True}
-
-@app.get("/projects", response_model=list[Project])
-async def list_projects():
-    return PROJECTS
 
 @app.post("/contact")
 async def contact(msg: ContactMessage):

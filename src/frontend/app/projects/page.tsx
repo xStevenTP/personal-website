@@ -1,17 +1,20 @@
 import ProjectCard, { Project } from '../../components/ProjectCard';
-import { API_BASE_URL } from '../../lib/config';
 
 export const revalidate = 0;
 export const metadata = { title: 'Projects — Steven Pham' };
 
-async function getProjects(): Promise<Project[]> {
-  const res = await fetch(`${API_BASE_URL}/projects`, { cache: 'no-store' });
-  if (!res.ok) throw new Error('Failed to load projects');
-  return res.json();
-}
+const projects : Project[] = [
+  {
+    id: "crypto-tracker",
+    name: "Crypto Tracker",
+    description: "Crypto Coin tracker website with AI suggestion.",
+    tags: ["Next.js", "TypeScript", "Tailwind", "Python", "Django", "Flask"],
+    liveUrl: "https://crypto-tracker.vercel.app",
+    repoUrl: "https://github.com/xStevenTP/CryptoTracker",
+  },
+];
 
 export default async function ProjectsPage() {
-  const projects = await getProjects();
   return (
     <section className="section">
       <h2>Project Showcase</h2>
