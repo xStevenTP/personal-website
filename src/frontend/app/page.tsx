@@ -9,6 +9,7 @@ export default function Home() {
         <h1>Hi, I'm Steven!</h1>
         <p>I'm a full-stack engineer focused on making a meaningful impact on anything I work on.</p>
         <div className="cta">
+          <a className="btn primary" href="/experience">View Experience</a>
           <a className="btn primary" href="/projects">View Projects</a>
           <a className="btn ghost" href="/contact">Get in Touch</a>
         </div>

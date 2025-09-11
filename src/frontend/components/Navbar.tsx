@@ -9,6 +9,7 @@ export default function Navbar() {
         <Link href="/" className={styles.logo}>Steven Pham.dev</Link>
         <div className={styles.links}>
           <Link href="/about">About</Link>
+          <Link href="/experience">Work Experience</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/contact">Contact</Link>
         </div>
