@@ -12,6 +12,14 @@ const projects : Project[] = [
     liveUrl: "https://crypto-tracker.vercel.app",
     repoUrl: "https://github.com/xStevenTP/CryptoTracker",
   },
+  {
+    id: "my-squad",
+    name: "MySquad",
+    description: "Passion Project of mine as a huge sports fan. A modern sports and esports team tracking dashboard. Follow your favorite teams across NBA, NFL, MLB, NHL, League of Legends, CS:GO, Valorant, and Dota 2.",
+    tags: ["Next.js", "TypeScript", "Tailwind", "Supabase", "PostgresSQL"],
+    liveUrl: "https://my-squads.vercel.app",
+    repoUrl: "https://github.com/xStevenTP/MySquad",
+  },
 ];
 
 export default async function ProjectsPage() {
