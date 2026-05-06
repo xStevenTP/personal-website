@@ -1,0 +1,27 @@
+@use '../styles/mixins' as *;
+
+.matrix {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.group {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-8);
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+  @media (max-width: 640px) { grid-template-columns: 1fr; gap: var(--space-2); }
+}
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  li {
+    font-size: var(--fs-md);
+    color: var(--ink);
+    &:not(:last-child)::after { content: '·'; margin-left: var(--space-4); color: var(--mute); }
+  }
+}
