@@ -33,5 +33,5 @@
 .eyebrow + h2, .eyebrow + h1 { margin-top: var(--space-3); }
 hr.rule { border: none; border-top: 1px solid var(--rule); margin: var(--space-12) 0; }
 
-[data-arrow]::after { content: ' →'; transition: transform var(--dur-fast) var(--ease-out); display: inline-block; }
+[data-arrow]::after { content: ' →' / ''; transition: transform var(--dur-fast) var(--ease-out); display: inline-block; }
 a:hover [data-arrow]::after { transform: translateX(4px); }
