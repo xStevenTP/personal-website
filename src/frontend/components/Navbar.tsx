@@ -1,10 +1,11 @@
 'use client';
 import Link from 'next/link';
+import type { Route } from 'next';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import styles from '../styles/navbar.module.scss';
 
-const links = [
+const links: { href: Route; label: string }[] = [
   { href: '/about', label: 'About' },
   { href: '/experience', label: 'Work' },
   { href: '/projects', label: 'Projects' },
