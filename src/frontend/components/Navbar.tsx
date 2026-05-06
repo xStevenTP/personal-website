@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Route } from 'next';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../styles/navbar.module.scss';
 
 const links: { href: Route; label: string }[] = [
@@ -16,6 +16,19 @@ const links: { href: Route; label: string }[] = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
 
   return (
     <nav className={styles.nav} aria-label="Primary">
@@ -24,14 +37,17 @@ export default function Navbar() {
           Steven&nbsp;Pham
         </Link>
         <button
+          ref={toggleRef}
+          type="button"
           className={styles.menuBtn}
           aria-expanded={open}
+          aria-controls="primary-menu"
           aria-label="Toggle menu"
           onClick={() => setOpen(o => !o)}
         >
           <span /><span /><span />
         </button>
-        <ul className={`${styles.links} ${open ? styles.open : ''}`}>
+        <ul id="primary-menu" className={`${styles.links} ${open ? styles.open : ''}`}>
           {links.map(l => (
             <li key={l.href}>
               <Link
