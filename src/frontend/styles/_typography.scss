@@ -1,0 +1,22 @@
+// src/frontend/styles/_typography.scss
+body {
+  font-family: var(--font-body-stack);
+  font-size: var(--fs-base);
+  color: var(--fg);
+  background: var(--bg);
+}
+h1, h2, h3, .display {
+  font-family: var(--font-display-stack);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-variation-settings: "opsz" 144;
+}
+h1, .display { font-size: var(--fs-3xl); }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-xl); }
+h4 { font-family: var(--font-body-stack); font-size: var(--fs-md); font-weight: 500; }
+p { font-size: var(--fs-md); line-height: 1.6; color: var(--ink-soft); max-width: 65ch; }
+.lede { font-family: var(--font-display-stack); font-size: var(--fs-lg); line-height: 1.35; color: var(--ink); max-width: 36ch; font-variation-settings: "opsz" 14; }
+.eyebrow { font-family: var(--font-body-stack); font-size: var(--fs-xs); font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); }
+small, .small { font-size: var(--fs-sm); color: var(--mute); }

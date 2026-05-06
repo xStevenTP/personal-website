@@ -1,4 +1,9 @@
-$bg: #000;
-$text: #000;
-$containerBackground: #f3f2f1;
-$cardBackground: #fff;
+// src/frontend/styles/_variables.scss
+$bg: var(--bg);
+$fg: var(--fg);
+$ink: var(--ink);
+$ink-soft: var(--ink-soft);
+$mute: var(--mute);
+$rule: var(--rule);
+$accent: var(--accent);
+$max-w: 1120px;

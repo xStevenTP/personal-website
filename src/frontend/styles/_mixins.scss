@@ -1,6 +1,13 @@
-@mixin button-base {
-  padding: .7rem 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.14);
-  cursor: pointer;
+// src/frontend/styles/_mixins.scss
+@mixin focus-ring {
+  &:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+}
+@mixin hairline-top { border-top: 1px solid var(--rule); }
+@mixin hairline-bottom { border-bottom: 1px solid var(--rule); }
+@mixin container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--gutter); }
+@mixin reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+  &[data-in='true'] { opacity: 1; transform: none; }
 }
