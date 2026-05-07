@@ -38,7 +38,9 @@ async def contact(msg: ContactMessage):
     SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
     SMTP_USER = os.getenv("SMTP_USER")
     SMTP_PASS = os.getenv("SMTP_PASS")
-    TO_EMAIL  = os.getenv("TO_EMAIL", "steventuanpham@gmail.com")
+    TO_EMAIL_DEFAULT = os.getenv("TO_EMAIL", "steventuanpham@gmail.com")
+    TO_EMAIL_REALTY  = os.getenv("TO_EMAIL_REALTY", "spham@privirealty.com")
+    TO_EMAIL = TO_EMAIL_REALTY if msg.topic == "realty" else TO_EMAIL_DEFAULT
 
     if not all([SMTP_HOST, SMTP_USER, SMTP_PASS, TO_EMAIL]):
         print("⚠️ Email not configured. Message received:")
