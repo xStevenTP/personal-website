@@ -45,7 +45,7 @@ export default function RealtyPage() {
         </div>
         <dl className={styles.credentials}>
           <div><dt>Brokerage</dt><dd>Privi Realty</dd></div>
-          <div><dt>License #</dt><dd>{/* TODO: Steven supplies MA license number */}MA #________</dd></div>
+          <div><dt>License #</dt><dd>MA #9632648-RE-S</dd></div>
           <div><dt>Service area</dt><dd>Greater Boston</dd></div>
         </dl>
       </header>
