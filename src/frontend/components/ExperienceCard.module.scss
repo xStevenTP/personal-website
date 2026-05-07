@@ -1,0 +1,16 @@
+@use '../styles/mixins' as *;
+
+.row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-8);
+  padding-block: var(--space-8);
+  border-bottom: 1px solid var(--rule);
+  &:first-of-type { border-top: 1px solid var(--rule); }
+  @media (max-width: 720px) { grid-template-columns: 1fr; gap: var(--space-3); }
+}
+.meta { padding-top: var(--space-1); }
+.head { display: flex; flex-direction: column; gap: var(--space-1); margin-bottom: var(--space-4); }
+.role { font-size: var(--fs-md); color: var(--mute); margin: 0; }
+.tasks { display: flex; flex-direction: column; gap: var(--space-3); }
+.tasks li { font-size: var(--fs-md); line-height: 1.55; color: var(--ink-soft); position: relative; padding-left: var(--space-6); &::before { content: '—'; position: absolute; left: 0; color: var(--mute); } }
