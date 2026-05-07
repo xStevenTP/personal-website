@@ -20,6 +20,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Steven Pham — Engineer & Realtor',
   description: 'Boston-based software engineer at Rakuten and licensed real-estate agent at Privi Realty. Problem solver. Innovator.',
+  // TODO: confirm production domain
   metadataBase: new URL('https://stevenpham.dev'),
   openGraph: {
     title: 'Steven Pham — Engineer & Realtor',
