@@ -25,6 +25,7 @@ class ContactMessage(BaseModel):
     name: str = Field(min_length=1, max_length=100)
     email: EmailStr
     message: str = Field(min_length=1, max_length=5000)
+    topic: str | None = None
 
 
 @app.get("/health")
@@ -46,10 +47,12 @@ async def contact(msg: ContactMessage):
         raise HTTPException(status_code=500, detail="Email not configured")
 
     email = EmailMessage()
-    email["Subject"] = f"Portfolio contact from {msg.name}"
+    topic_label = f" [{msg.topic}]" if msg.topic else ""
+    email["Subject"] = f"Portfolio contact{topic_label} from {msg.name}"
     email["From"] = SMTP_USER
     email["To"] = TO_EMAIL
-    email.set_content(f"From: {msg.name} <{msg.email}>\n\n{msg.message}")
+    body_topic = f"Topic: {msg.topic}\n\n" if msg.topic else ""
+    email.set_content(f"From: {msg.name} <{msg.email}>\n{body_topic}{msg.message}")
 
     context = ssl.create_default_context()
     with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
